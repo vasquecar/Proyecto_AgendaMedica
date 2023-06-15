@@ -1,0 +1,26 @@
+body{
+  background-color: #EAFFF7;
+}
+
+#nav{
+    background-color: #22A39F;
+}
+.MainText{
+  text-align: center;
+}
+.Item{
+    font-size: 17px;
+    padding-left: 20px;
+    margin-right: 10px;
+    color: #F4F4F4;
+    background-color: #22A39F;
+}
+
+.search{
+  align-items: end;
+}
+
+.btn-background{
+  color: #F4F4F4;
+  background-color: #22A39F;
+}
