@@ -1,0 +1,175 @@
+/* expenses.css */
+
+/* Colores principales */
+:root {
+    --primary-color: #1b263b; /* Azul oscuro */
+    --secondary-color: #c7ccd5; /* Gris claro */
+    --accent-color: #044802; /* Rosa */
+  }
+  
+  /* Estilos para la tabla */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background-color: var(--secondary-color);
+    border-radius: 10px;
+    overflow: hidden;
+    
+  }
+  
+  table th,
+  table td {
+    padding: 15px;
+    text-align: left;
+    color: var(--primary-color);
+  }
+  
+  table th {
+    background-color: transparent;
+    border-bottom: 1px solid var(--primary-color);
+    font-weight: bold;
+  }
+  
+  table tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Estilos para el botón de agregar gasto */
+  .add-expense-button {
+    text-align: right;
+    margin-top: 20px;
+  }
+  
+  .add-expense-button button {
+    background-color: var(--accent-color);
+    border-color: var(--accent-color);
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-expense-button button:hover {
+    background-color: #368038;
+    border-color: #ff2366;
+  }
+  
+  /* Estilos para el modal */
+  .modal-form-label {
+    color: var(--primary-color);
+    font-weight: bold;
+  }
+  .modal p{
+    color: black;
+  }
+  
+  .modal-header {
+    background-color: var(--secondary-color);
+    border-bottom: none;
+  }
+  
+  .modal-footer {
+    border-top: none;
+  }
+  
+  /* Estilos para los botones */
+  .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-primary:hover {
+    background-color: #0d1827;
+    border-color: #0d1827;
+  }
+  
+  .btn-danger {
+    background-color: #dc3545;
+    border-color: #dc3545;
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-danger:hover {
+    background-color: #c82333;
+    border-color: #bd2130;
+  }
+  
+  /* Estilos para la paginación */
+  .pagination {
+    margin-top: 20px;
+    text-align: center;
+  }
+  
+  .pagination .btn {
+    margin-right: 5px;
+  }
+  
+  .pagination .btn:last-child {
+    margin-right: 0;
+  }
+  
+  .pagination .btn-primary {
+    background-color: var(--primary-color);
+    border-color: var(--primary-color);
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: #fff;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pagination .btn-primary:hover {
+    background-color: #0d1827;
+    border-color: #0d1827;
+  }
+  
+  .pagination .btn-outline-primary {
+    background-color: transparent;
+    border-color: var(--primary-color);
+    border-radius: 5px;
+    padding: 10px 20px;
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+  }
+  
+  .pagination .btn-outline-primary:hover {
+    background-color: var(--primary-color);
+    color: #fff;
+  }
+  
+  /* Estilos adicionales */
+  body {
+    font-family: "Arial", sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #696767;
+    color: #fff;
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .page-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
