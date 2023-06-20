@@ -3,16 +3,18 @@ import React from "react";
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Login from "./pages/Login/Login";
-
+import UserProfile from "./pages/UserProfile/UserProfile";
+import MedicationSchedule from './pages/MedicationSchedule/MedicationSchedule';
+import ExpensesTable from './pages/Expenses/Expenses';
 
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route path="/" element={<Login/>}></Route>
-      </Routes>
-    </BrowserRouter>
+    <div>
+      <MedicationSchedule>
+
+      </MedicationSchedule>
+    </div>
   );
 }
 
