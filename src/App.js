@@ -11,9 +11,15 @@ import ExpensesTable from './pages/Expenses/Expenses';
 function App() {
   return (
     <div>
-      <MedicationSchedule>
-
-      </MedicationSchedule>
+      <BrowserRouter>
+      <Routes>
+        <Route path="/Login" element={ <Login/> }></Route>
+        <Route path="/MedicationSchedule" element={ <MedicationSchedule/> }></Route>
+        <Route path="/UserProfile" element={ <UserProfile/> }></Route>
+        <Route path="/ExpensesTable" element={ <ExpensesTable/> }></Route>
+        <Route></Route>
+      </Routes>
+      </BrowserRouter>
     </div>
   );
 }
