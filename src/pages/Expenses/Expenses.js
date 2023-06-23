@@ -3,6 +3,7 @@ import "./expenses.css";
 import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import Form from "react-bootstrap/Form";
+import Header from "../Header/Header.js";
 
 const ExpensesTable = () => {
   const [expenses, setExpenses] = useState([]);
@@ -81,6 +82,7 @@ const ExpensesTable = () => {
 
   return (
     <div>
+      <Header/>
       <Form.Group controlId="formSearch">
         <Form.Control
           type="text"

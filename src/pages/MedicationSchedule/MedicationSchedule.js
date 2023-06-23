@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './medicationschedule.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Modal, Button } from 'react-bootstrap';
+import Header from "../Header/Header.js";
 
 const MedicationSchedule = () => {
   const [rows, setRows] = useState([]);
@@ -59,6 +60,8 @@ const MedicationSchedule = () => {
   };
 
   return (
+    <>
+    <Header/>
     <div className="container mt-5">
       <h1 className="text-center mb-4">Medication Schedule</h1>
       <table className="table">
@@ -153,6 +156,7 @@ const MedicationSchedule = () => {
         </Modal.Footer>
       </Modal>
     </div>
+    </>
   );
 };
 

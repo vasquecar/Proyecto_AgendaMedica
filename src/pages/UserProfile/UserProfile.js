@@ -1,6 +1,7 @@
+import React from "react";
 import { useState } from "react";
 import "./userprofile.css";
-import Header from "../Header/Header";
+import Header from "../Header/Header.js";
 
 function UserProfile() {
 
@@ -44,7 +45,8 @@ function UserProfile() {
 
   ]);
   return (
-    <div>
+    <>
+    <Header/>
       <section>
         <div className="container">
           <h1>User Profile</h1>
@@ -59,8 +61,8 @@ function UserProfile() {
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
-}
+} 
 
 export default UserProfile;
