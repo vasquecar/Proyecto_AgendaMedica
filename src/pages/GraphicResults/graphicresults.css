@@ -1,0 +1,12 @@
+
+.contenedor-principal{
+    display: flexbox;
+    align-items: center;
+    justify-content: center;
+}
+
+.contenedor-grafico{
+    padding: 2%;
+    display: flex;
+    justify-content: center;
+}

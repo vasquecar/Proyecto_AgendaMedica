@@ -55,24 +55,6 @@
     border-color: #ff2366;
   }
   
-  /* Estilos para el modal */
-  .modal-form-label {
-    color: var(--primary-color);
-    font-weight: bold;
-  }
-  .modal p{
-    color: black;
-  }
-  
-  .modal-header {
-    background-color: var(--secondary-color);
-    border-bottom: none;
-  }
-  
-  .modal-footer {
-    border-top: none;
-  }
-  
   /* Estilos para los botones */
   .btn-primary {
     background-color: var(--primary-color);
