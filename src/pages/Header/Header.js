@@ -1,12 +1,21 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
 import { Modal, Button } from 'react-bootstrap';
-import "./main.css";
-import { Link } from "react-router-dom";
+import "./header.css";
+import logo from "../Header/logoNav.png"
 
 const Header = (props) => {
+  const [showHomeModal, setShowHomeModal] = useState(false);
   const [showAboutModal, setShowAboutModal] = useState(false);
   const [showServicesModal, setShowServicesModal] = useState(false);
+
+  const handleHomeModalOpen = () => {
+    setShowHomeModal(true);
+  };
+
+  const handleHomeModalClose = () => {
+    setShowHomeModal(false);
+  };
 
   const handleAboutModalOpen = () => {
     setShowAboutModal(true);
@@ -27,22 +36,25 @@ const Header = (props) => {
   return (
     <div>
       <nav className="navbar navbar-expand-md" id="nav">
-        <Link className="navbar-brand Item" to="/" target="_self">
+        <a className="navbar-brand Item">
           <img
-            src="/docs/4.3/assets/brand/bootstrap-solid.svg"
-            width="30"
-            height="30"
+            src={logo}
+            width="100"
+            height="100"
             className="d-inline-block align-top"
-            alt=""
+            alt="Logo"
           />
-          Healthy Pocket
-        </Link>
+        </a>
         <div className="collapse navbar-collapse" id="navbarNavDropdown">
           <ul className="navbar-nav">
+            <li><h4>Healthy Pocket</h4></li>
             <li className="nav-item">
-              <Link className="navbar-brand Item" to="/" target="_self">
-                Home
-              </Link>
+            <button
+                className="navbar-brand Item"
+                onClick={handleHomeModalOpen}
+              >
+                About
+              </button>
             </li>
             <li className="nav-item">
               <button
@@ -84,7 +96,12 @@ const Header = (props) => {
                         type="submit"
                       >
                         Search
-                      </button>
+                      </button>                  
+                    </div>
+                  </li>
+                  <li>
+                    <div>
+                    <button className="btn btn-red btn-background my-3 my-sm-0" type="submit"><a href="/Login">LogOut</a></button>
                     </div>
                   </li>
                 </ul>
@@ -93,6 +110,11 @@ const Header = (props) => {
           </div>
         </div>
       </nav>
+
+      <HomeModal
+        show={showHomeModal}
+        handleClose={handleHomeModalClose}
+      />
 
       <AboutModal
         show={showAboutModal}
@@ -104,6 +126,41 @@ const Header = (props) => {
         handleClose={handleServicesModalClose}
       />
     </div>
+  );
+};
+
+const HomeModal = ({ show, handleClose }) => {
+  return (
+    <Modal show={show} onHide={handleClose} centered>
+      <Modal.Header>
+        <Modal.Title>Descripción</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <p>
+        Somos una empresa dedicada al servicio social
+        y que busca un estado de salud adecuado para cada
+        individuo.</p>
+
+      </Modal.Body>
+      <Modal.Header>
+      <Modal.Title>Misión y Visión</Modal.Title>
+      </Modal.Header>
+      <Modal.Body>
+        <p>*Generar una organización adecuada para
+          la toma de medicamentos.
+        </p>
+        <p>
+          *Cuidar la salud de las personas a través de 
+          un buen sitio web.
+        </p>
+
+      </Modal.Body>
+      <Modal.Footer>
+        <Button variant="secondary" onClick={handleClose}>
+          Cerrar
+        </Button>
+      </Modal.Footer>
+    </Modal>
   );
 };
 
@@ -141,7 +198,7 @@ const ServicesModal = ({ show, handleClose }) => {
           <a href="/UserProfile">Perfil del usuario</a>
         </p>
         <p>
-          <a href="/Pendiente">Registro de exámenes</a>
+          <a href="/ExamRegistration">Registro de exámenes</a>
         </p>
         <p>
           <a href="/MedicationSchedule">Control de horario de medicamentos</a>
@@ -150,10 +207,7 @@ const ServicesModal = ({ show, handleClose }) => {
           <a href="/ExpensesTable">Control de gastos</a>
         </p>
         <p>
-          <a href="/Pendiente">Historial médico y de exámenes</a>
-        </p>
-        <p>
-          <a href="/Pendiente">Representación gráfica de estadísticas</a>
+          <a href="/GraphicResults">Representación gráfica de estadísticas</a>
         </p>
       </Modal.Body>
       <Modal.Footer>

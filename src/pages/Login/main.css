@@ -1,3 +1,19 @@
+.container-log{
+	display: flex;
+	justify-content: center;
+	/*
+	position:absolute;
+	padding-top: 40px;
+  	top:0px;
+  	right:0px;
+  	bottom:0px;
+  	left:0px;
+	background-color: darkslategray;
+	*/
+}
+.a{
+	color: black;
+}
 .Auth-form-container {
 	display: flex;
 	justify-content: center;
@@ -7,12 +23,11 @@
   
   .Auth-form {
 	width: 420px;
-	box-shadow: rgba(17, 58, 93, 100) 1px 1px 50px;
 	padding-top: 30px;
 	padding-bottom: 20px;
 	border-radius: 8px;
-	color: aliceblue;
-	background-color: rgba(17, 58, 93, 0.9);
+	color: rgb(5, 29, 50);
+	background-color: #22A39F;
   }
   
   .Auth-form-content {
@@ -24,12 +39,12 @@
 	text-align: center;
 	margin-bottom: 1em;
 	font-size: 35px;
-	color: white;
+	color: rgb(0, 0, 0);
 
   }
   
   label {
 	font-size: 16px;
 	font-weight: 600;
-	color: white;
+	color: rgb(2, 2, 2);
   }

@@ -17,6 +17,11 @@
     background-color: #22A39F;
 }
 
+.modal-body .p{
+  justify-content: center;
+  text-align: center;
+}
+
 .search{
   align-items: end;
 }
@@ -24,4 +29,22 @@
 .btn-background{
   color: #F4F4F4;
   background-color: #22A39F;
+}
+
+/* Estilos para el modal */
+.modal-header{
+  background-color: var(--secondary-color);
+  border-bottom: none;
+}
+
+.modal-form-label {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+.modal p{
+  color: rgb(0, 0, 0);
+}
+
+.modal-footer {
+  border-top: none;
 }
