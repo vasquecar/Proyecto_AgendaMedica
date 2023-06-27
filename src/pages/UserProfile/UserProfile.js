@@ -2,9 +2,9 @@ import React from "react";
 import { useState } from "react";
 import "./userprofile.css";
 import Header from "../Header/Header.js";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function UserProfile() {
-
   const [cards] = useState([
     {
       title: "ID User",
