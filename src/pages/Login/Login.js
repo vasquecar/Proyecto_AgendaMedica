@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 import "./main.css";
-import { BrowserRouter as Router, Route, Navigate  } from 'react-router-dom';
-
+import { BrowserRouter as Router, Route, Navigate } from "react-router-dom";
 
 const Login = (props) => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [isAuthorized, setIsAuthorized] = useState(false);
+  const [loginError, setLoginError] = useState(false); // Nuevo estado para el error de inicio de sesión
 
   const API_URL = "http://localhost:25060/api/Login/";
 
@@ -27,15 +27,17 @@ const Login = (props) => {
         if (data.message === "Usuario Encontrado,Bienvenido") {
           console.log("Inicio de sesión exitoso");
           setIsAuthorized(true);
-          //aqui 
         } else {
           console.log("Credenciales inválidas");
+          setLoginError(true); // Establecer el estado de error de inicio de sesión
         }
       } else {
         console.log("Error en el servidor:", response.status);
+        setLoginError(true); // Establecer el estado de error de inicio de sesión
       }
     } catch (error) {
       console.log("Error en el servidor:", error.message);
+      setLoginError(true); // Establecer el estado de error de inicio de sesión
     }
   };
 
@@ -51,6 +53,11 @@ const Login = (props) => {
             <form className="Auth-form" onSubmit={handleSubmit}>
               <div className="Auth-form-content">
                 <h3 className="Auth-form-title">LOGIN</h3>
+                {loginError && ( // Mostrar el mensaje de error si loginError es true
+                  <div className="alert alert-danger" role="alert">
+                    No se pudo completar el inicio de sesión.
+                  </div>
+                )}
                 <div className="form-group mt-3">
                   <label>Nombre de Usuario: </label>
                   <input
