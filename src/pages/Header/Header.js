@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import "bootstrap/dist/css/bootstrap.min.css";
-import { Modal, Button } from 'react-bootstrap';
+import { Modal, Button } from "react-bootstrap";
 import "./header.css";
-import logo from "../Header/logoNav.png"
+import logo from "../Header/logoNav.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
 const Header = (props) => {
   const [showHomeModal, setShowHomeModal] = useState(false);
@@ -35,25 +37,24 @@ const Header = (props) => {
 
   return (
     <div>
-      <nav className="navbar navbar-expand-md" id="nav">
-        <a className="navbar-brand Item">
+      <nav id="nav">
+        <a>
           <img
             src={logo}
             width="100"
             height="100"
+            fill="none"
             className="d-inline-block align-top"
             alt="Logo"
           />
         </a>
-        <div className="collapse navbar-collapse" id="navbarNavDropdown">
-          <ul className="navbar-nav">
-            <li><h4>Healthy Pocket</h4></li>
+          <ul id="navbar1">
             <li className="nav-item">
-            <button
+              <button
                 className="navbar-brand Item"
                 onClick={handleHomeModalOpen}
               >
-                About
+                Home
               </button>
             </li>
             <li className="nav-item">
@@ -73,53 +74,19 @@ const Header = (props) => {
               </button>
             </li>
           </ul>
-          <div className="container">
-            <div className="row">
-              <div className="col-3"></div>
-              <div className="col-3"></div>
-              <div className="col-6">
-                <ul className="navbar-nav">
-                  <li>
-                    <div className="Item">
-                      <input
-                        className="form-control mr-sm-2 pl-5"
-                        type="search"
-                        placeholder="Search"
-                        aria-label="Search"
-                      />
-                    </div>
-                  </li>
-                  <li>
-                    <div>
-                      <button
-                        className="btn btn-light btn-background my-2 my-sm-0"
-                        type="submit"
-                      >
-                        Search
-                      </button>                  
-                    </div>
-                  </li>
-                  <li>
-                    <div>
-                    <button className="btn btn-red btn-background my-3 my-sm-0" type="submit"><a href="/Login">LogOut</a></button>
-                    </div>
-                  </li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
+          <button id="logout-btn"
+                  className="btn btn-red btn-background my-3 my-sm-0"
+                  type="submit"
+                >
+                  <a href="/Login">
+                  <FontAwesomeIcon icon={faCircleXmark} style={{color: "#b30000",}} />
+                  </a>
+                </button>
       </nav>
 
-      <HomeModal
-        show={showHomeModal}
-        handleClose={handleHomeModalClose}
-      />
+      <HomeModal show={showHomeModal} handleClose={handleHomeModalClose} />
 
-      <AboutModal
-        show={showAboutModal}
-        handleClose={handleAboutModalClose}
-      />
+      <AboutModal show={showAboutModal} handleClose={handleAboutModalClose} />
 
       <ServicesModal
         show={showServicesModal}
@@ -137,23 +104,16 @@ const HomeModal = ({ show, handleClose }) => {
       </Modal.Header>
       <Modal.Body>
         <p>
-        Somos una empresa dedicada al servicio social
-        y que busca un estado de salud adecuado para cada
-        individuo.</p>
-
+          Somos una empresa dedicada al servicio social y que busca un estado de
+          salud adecuado para cada individuo.
+        </p>
       </Modal.Body>
       <Modal.Header>
-      <Modal.Title>Misión y Visión</Modal.Title>
+        <Modal.Title>Misión y Visión</Modal.Title>
       </Modal.Header>
       <Modal.Body>
-        <p>*Generar una organización adecuada para
-          la toma de medicamentos.
-        </p>
-        <p>
-          *Cuidar la salud de las personas a través de 
-          un buen sitio web.
-        </p>
-
+        <p>*Generar una organización adecuada para la toma de medicamentos.</p>
+        <p>*Cuidar la salud de las personas a través de un buen sitio web.</p>
       </Modal.Body>
       <Modal.Footer>
         <Button variant="secondary" onClick={handleClose}>
@@ -218,6 +178,5 @@ const ServicesModal = ({ show, handleClose }) => {
     </Modal>
   );
 };
-
 
 export default Header;
